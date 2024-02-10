@@ -14,13 +14,6 @@ function formatDate(date) {
     return [year, month, day].join('-')
 }
 
-const loggerTransports = [
-    new winston.transports.File({
-        level: 'info',
-        filename: `${process.env.LOG_DIRECTORY}/${formatDate(Date.now())}/info.log`,
-    })
-]
-
 const requestLoggerTransports = [
     new winston.transports.File({
         level: 'warn',
@@ -41,14 +34,14 @@ if (process.env.NODE_ENV !== 'production') {
     )
 }
 
-const logger = winston.createLogger({
-    transports: loggerTransports,
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.json(),
-        winston.format.prettyPrint()
-    )
-})
+// const logger = winston.createLogger({
+//     transports: loggerTransports,
+//     format: winston.format.combine(
+//         winston.format.timestamp(),
+//         winston.format.json(),
+//         winston.format.prettyPrint()
+//     )
+// })
 
 const requestLogger = winston.createLogger({
     transports: requestLoggerTransports,
@@ -60,5 +53,5 @@ const requestLogger = winston.createLogger({
 })
 
 module.exports = {
-    logger, requestLogger
+    requestLogger
 }

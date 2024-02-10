@@ -76,7 +76,7 @@ const registerService = async (params) => {
         password: hashedPassword
     })
 
-    result.message = "user Created"
+    result.message = "User is successfully registered"
     return result
 }
 

@@ -22,6 +22,10 @@ const doProfile = async (req, res) => {
     try {
         let authorized = await userService.getProfileService(params)
 
+        if (!authorized.data) {
+            return response.notFound("User", res)
+        }
+
         return response.ok(authorized.data, res)
     } catch (error) {
         return ErrHandling(error, res)
@@ -55,7 +59,9 @@ const doLogin = async (req, res) => {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000
         })
-        return response.ok(client.data.accessToken, res)
+        return response.ok({
+            accessToken: client.data.accessToken
+        }, res)
         
     } catch (error) {
         return LoginHandling(error, res)
