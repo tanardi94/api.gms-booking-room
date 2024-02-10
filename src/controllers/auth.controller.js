@@ -1,9 +1,9 @@
 const response = require('../helpers/response')
-const clientService = require('../services/auth.service')
+const userService = require('../services/auth.service')
 const Message = require('../../config/messageResponse')
 
 const ErrHandling = (error, res) => {
-    console.log(error)
+    console.error(error)
     return response.failure(
         Message.ErrorMessage, res
     )
@@ -14,14 +14,13 @@ const LoginHandling = (error, res) => {
     return response.failure(Message.ErrorLoginMessage, res)
 }
 
-const Profile = async (req, res) => {
-
+const doProfile = async (req, res) => {
 
     let params = {
-        uuid:req.clientUUID
+        uuid:req.uuid
     }
     try {
-        let authorized = await clientService.getProfile(params)
+        let authorized = await userService.getProfileService(params)
 
         return response.ok(authorized.data, res)
     } catch (error) {
@@ -29,10 +28,10 @@ const Profile = async (req, res) => {
     }
 }
 
-const Register = async (req, res) => {
+const doRegister = async (req, res) => {
 
     try {
-        let register = await clientService.doRegister(req.body)
+        let register = await userService.registerService(req.body)
         
         if (register.code !== 200) {
             return response.failure(register.message, res)
@@ -45,12 +44,12 @@ const Register = async (req, res) => {
     
 }
 
-const Login = async (req, res) => {
+const doLogin = async (req, res) => {
 
     let params = req.body
     try {
 
-        let client = await clientService.doLogin(params)
+        let client = await userService.loginService(params)
 
         res.cookie('refreshToken', client.data.refresher, {
             httpOnly: true,
@@ -63,10 +62,10 @@ const Login = async (req, res) => {
     }
 }
 
-const Logout = async (req, res) => {
+const doLogout = async (req, res) => {
 
     try {
-        let logout = await clientService.doLogout(req.cookies.refreshToken)
+        let logout = await userService.logoutService(req.cookies.refreshToken)
 
         switch (logout.code) {
             case 404:
@@ -85,5 +84,5 @@ const Logout = async (req, res) => {
 }
 
 module.exports = {
-    Profile, Register, Login, Logout
+    doProfile, doRegister, doLogin, doLogout
 }

@@ -9,7 +9,7 @@ exports.ok = function(values, res) {
         errors: [],
         values: values
     };
-    res.json(data).end();
+    return res.json(data).end();
 };
 
 exports.customResponse = (message, status, code, errors, values, res) => {
@@ -20,7 +20,7 @@ exports.customResponse = (message, status, code, errors, values, res) => {
         errors: errors,
         values: values
     };
-    res.json(data).end();
+    return res.json(data).end();
 }
 
 exports.failure = function(message, res) {
@@ -31,7 +31,7 @@ exports.failure = function(message, res) {
         errors: [],
         values: []
     };
-    res.json(data).end();
+    return res.json(data).end();
 };
 
 exports.notFound = function(message, res) {
@@ -42,7 +42,7 @@ exports.notFound = function(message, res) {
         errors: [],
         values: []
     };
-    res.json(data).end();
+    return res.json(data).end();
 };
 
 exports.created = function(message, data = [], res) {
@@ -53,7 +53,7 @@ exports.created = function(message, data = [], res) {
         errors: [],
         values: data
     };
-    res.json(data).end();
+    return res.json(data).end();
 }
 
 exports.invalidParameter = function(errors, res) {
@@ -64,7 +64,7 @@ exports.invalidParameter = function(errors, res) {
         errors: errors,
         values: []
     };
-    res.json(data).end();
+    return res.json(data).end();
 }
 
 exports.forbidden = function(res) {
@@ -76,7 +76,7 @@ exports.forbidden = function(res) {
         values: []
     };
 
-    res.json(data).end();
+    return res.json(data).end();
 }
 
 exports.unauthenticated = function(res) {
@@ -88,5 +88,5 @@ exports.unauthenticated = function(res) {
         values: []
     };
 
-    res.json(data).end();
+    return res.json(data).end();
 }

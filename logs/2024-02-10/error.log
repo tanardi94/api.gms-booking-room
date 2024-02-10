@@ -1,0 +1,950 @@
+{
+  error: ReferenceError: Sequelize is not defined
+      at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js:11:23)
+      at Module._compile (node:internal/modules/cjs/loader:1256:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+      at Module.load (node:internal/modules/cjs/loader:1119:32)
+      at Module._load (node:internal/modules/cjs/loader:960:12)
+      at Module.require (node:internal/modules/cjs/loader:1143:19)
+      at require (node:internal/modules/cjs/helpers:119:18)
+      at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js:2:14)
+      at Module._compile (node:internal/modules/cjs/loader:1256:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1310:10),
+  level: 'error',
+  message: 'uncaughtException: Sequelize is not defined\n' +
+    'ReferenceError: Sequelize is not defined\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js:11:23)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1119:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:960:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1143:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:119:18)\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js:2:14)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)',
+  stack: 'ReferenceError: Sequelize is not defined\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js:11:23)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1119:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:960:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1143:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:119:18)\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js:2:14)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)',
+  exception: true,
+  date: 'Sat Feb 10 2024 22:04:18 GMT+0700 (GMT+07:00)',
+  process: {
+    pid: 21058,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/tanardi94/Projects/gms/booking-room/api',
+    execPath: '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+    version: 'v18.18.1',
+    argv: [
+      '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+      '/Users/tanardi94/Projects/gms/booking-room/api/server.js'
+    ],
+    memoryUsage: {
+      rss: 78462976,
+      heapTotal: 33931264,
+      heapUsed: 22252776,
+      external: 1213904,
+      arrayBuffers: 402819
+    }
+  },
+  os: {
+    loadavg: [ 2.43798828125, 3.1689453125, 3.1748046875 ],
+    uptime: 1167319
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js',
+      function: null,
+      line: 11,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1256,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1310,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1119,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 960,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1143,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/helpers',
+      function: 'require',
+      line: 119,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1256,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1310,
+      method: '.js',
+      native: false
+    }
+  ],
+  timestamp: '2024-02-10T15:04:18.253Z'
+}
+{
+  error: ReferenceError: Sequelize is not defined
+      at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js:11:23)
+      at Module._compile (node:internal/modules/cjs/loader:1256:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+      at Module.load (node:internal/modules/cjs/loader:1119:32)
+      at Module._load (node:internal/modules/cjs/loader:960:12)
+      at Module.require (node:internal/modules/cjs/loader:1143:19)
+      at require (node:internal/modules/cjs/helpers:119:18)
+      at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js:2:14)
+      at Module._compile (node:internal/modules/cjs/loader:1256:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1310:10),
+  level: 'error',
+  message: 'uncaughtException: Sequelize is not defined\n' +
+    'ReferenceError: Sequelize is not defined\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js:11:23)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1119:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:960:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1143:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:119:18)\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js:2:14)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)',
+  stack: 'ReferenceError: Sequelize is not defined\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js:11:23)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1119:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:960:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1143:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:119:18)\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js:2:14)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)',
+  exception: true,
+  date: 'Sat Feb 10 2024 22:04:52 GMT+0700 (GMT+07:00)',
+  process: {
+    pid: 21246,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/tanardi94/Projects/gms/booking-room/api',
+    execPath: '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+    version: 'v18.18.1',
+    argv: [
+      '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+      '/Users/tanardi94/Projects/gms/booking-room/api/server.js'
+    ],
+    memoryUsage: {
+      rss: 79593472,
+      heapTotal: 34193408,
+      heapUsed: 22299920,
+      external: 1199926,
+      arrayBuffers: 388841
+    }
+  },
+  os: {
+    loadavg: [ 2.86474609375, 3.18310546875, 3.177734375 ],
+    uptime: 1167353
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/models/user.model.js',
+      function: null,
+      line: 11,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1256,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1310,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1119,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 960,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1143,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/helpers',
+      function: 'require',
+      line: 119,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/services/auth.service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1256,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1310,
+      method: '.js',
+      native: false
+    }
+  ],
+  timestamp: '2024-02-10T15:04:52.936Z'
+}
+{
+  error: ConnectionError [SequelizeConnectionError]: database "booking-room" does not exist
+      at Client._connectionCallback (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:143:24)
+      at Client._handleErrorWhileConnecting (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js:327:19)
+      at Client._handleErrorMessage (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js:347:19)
+      at Connection.emit (node:events:517:28)
+      at /Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/connection.js:117:12
+      at Parser.parse (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:40:17)
+      at Socket.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/index.js:11:42)
+      at Socket.emit (node:events:517:28)
+      at addChunk (node:internal/streams/readable:335:12)
+      at readableAddChunk (node:internal/streams/readable:308:9) {
+    parent: error: database "booking-room" does not exist
+        at Parser.parseErrorMessage (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:287:98)
+        at Parser.handlePacket (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:126:29)
+        at Parser.parse (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:39:38)
+        at Socket.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/index.js:11:42)
+        at Socket.emit (node:events:517:28)
+        at addChunk (node:internal/streams/readable:335:12)
+        at readableAddChunk (node:internal/streams/readable:308:9)
+        at Readable.push (node:internal/streams/readable:245:10)
+        at TCP.onStreamRead (node:internal/stream_base_commons:190:23) {
+      length: 97,
+      severity: 'FATAL',
+      code: '3D000',
+      detail: undefined,
+      hint: undefined,
+      position: undefined,
+      internalPosition: undefined,
+      internalQuery: undefined,
+      where: undefined,
+      schema: undefined,
+      table: undefined,
+      column: undefined,
+      dataType: undefined,
+      constraint: undefined,
+      file: 'postinit.c',
+      line: '941',
+      routine: 'InitPostgres'
+    },
+    original: error: database "booking-room" does not exist
+        at Parser.parseErrorMessage (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:287:98)
+        at Parser.handlePacket (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:126:29)
+        at Parser.parse (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:39:38)
+        at Socket.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/index.js:11:42)
+        at Socket.emit (node:events:517:28)
+        at addChunk (node:internal/streams/readable:335:12)
+        at readableAddChunk (node:internal/streams/readable:308:9)
+        at Readable.push (node:internal/streams/readable:245:10)
+        at TCP.onStreamRead (node:internal/stream_base_commons:190:23) {
+      length: 97,
+      severity: 'FATAL',
+      code: '3D000',
+      detail: undefined,
+      hint: undefined,
+      position: undefined,
+      internalPosition: undefined,
+      internalQuery: undefined,
+      where: undefined,
+      schema: undefined,
+      table: undefined,
+      column: undefined,
+      dataType: undefined,
+      constraint: undefined,
+      file: 'postinit.c',
+      line: '941',
+      routine: 'InitPostgres'
+    }
+  },
+  level: 'error',
+  message: 'uncaughtException: database "booking-room" does not exist\n' +
+    'SequelizeConnectionError: database "booking-room" does not exist\n' +
+    '    at Client._connectionCallback (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:143:24)\n' +
+    '    at Client._handleErrorWhileConnecting (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js:327:19)\n' +
+    '    at Client._handleErrorMessage (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js:347:19)\n' +
+    '    at Connection.emit (node:events:517:28)\n' +
+    '    at /Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/connection.js:117:12\n' +
+    '    at Parser.parse (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:40:17)\n' +
+    '    at Socket.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/index.js:11:42)\n' +
+    '    at Socket.emit (node:events:517:28)\n' +
+    '    at addChunk (node:internal/streams/readable:335:12)\n' +
+    '    at readableAddChunk (node:internal/streams/readable:308:9)',
+  stack: 'SequelizeConnectionError: database "booking-room" does not exist\n' +
+    '    at Client._connectionCallback (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:143:24)\n' +
+    '    at Client._handleErrorWhileConnecting (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js:327:19)\n' +
+    '    at Client._handleErrorMessage (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js:347:19)\n' +
+    '    at Connection.emit (node:events:517:28)\n' +
+    '    at /Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/connection.js:117:12\n' +
+    '    at Parser.parse (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js:40:17)\n' +
+    '    at Socket.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/index.js:11:42)\n' +
+    '    at Socket.emit (node:events:517:28)\n' +
+    '    at addChunk (node:internal/streams/readable:335:12)\n' +
+    '    at readableAddChunk (node:internal/streams/readable:308:9)',
+  exception: true,
+  date: 'Sat Feb 10 2024 22:21:32 GMT+0700 (GMT+07:00)',
+  process: {
+    pid: 26102,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/tanardi94/Projects/gms/booking-room/api',
+    execPath: '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+    version: 'v18.18.1',
+    argv: [
+      '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+      '/Users/tanardi94/Projects/gms/booking-room/api/server.js'
+    ],
+    memoryUsage: {
+      rss: 83836928,
+      heapTotal: 37601280,
+      heapUsed: 20894784,
+      external: 935198,
+      arrayBuffers: 83499
+    }
+  },
+  os: {
+    loadavg: [ 2.205078125, 2.7890625, 2.90087890625 ],
+    uptime: 1168353
+  },
+  trace: [
+    {
+      column: 24,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/sequelize/lib/dialects/postgres/connection-manager.js',
+      function: 'Client._connectionCallback',
+      line: 143,
+      method: '_connectionCallback',
+      native: false
+    },
+    {
+      column: 19,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js',
+      function: 'Client._handleErrorWhileConnecting',
+      line: 327,
+      method: '_handleErrorWhileConnecting',
+      native: false
+    },
+    {
+      column: 19,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/client.js',
+      function: 'Client._handleErrorMessage',
+      line: 347,
+      method: '_handleErrorMessage',
+      native: false
+    },
+    {
+      column: 28,
+      file: 'node:events',
+      function: 'Connection.emit',
+      line: 517,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg/lib/connection.js',
+      function: null,
+      line: 117,
+      method: null,
+      native: false
+    },
+    {
+      column: 17,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/parser.js',
+      function: 'Parser.parse',
+      line: 40,
+      method: 'parse',
+      native: false
+    },
+    {
+      column: 42,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/pg-protocol/dist/index.js',
+      function: null,
+      line: 11,
+      method: null,
+      native: false
+    },
+    {
+      column: 28,
+      file: 'node:events',
+      function: 'Socket.emit',
+      line: 517,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/streams/readable',
+      function: 'addChunk',
+      line: 335,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: 'node:internal/streams/readable',
+      function: 'readableAddChunk',
+      line: 308,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-02-10T15:21:32.448Z'
+}
+{
+  error: ReferenceError: checkHeaders is not defined
+      at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/routes/routes.js:13:24)
+      at Module._compile (node:internal/modules/cjs/loader:1256:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+      at Module.load (node:internal/modules/cjs/loader:1119:32)
+      at Module._load (node:internal/modules/cjs/loader:960:12)
+      at Module.require (node:internal/modules/cjs/loader:1143:19)
+      at require (node:internal/modules/cjs/helpers:119:18)
+      at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/server.js:22:19)
+      at Module._compile (node:internal/modules/cjs/loader:1256:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1310:10),
+  level: 'error',
+  message: 'uncaughtException: checkHeaders is not defined\n' +
+    'ReferenceError: checkHeaders is not defined\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/routes/routes.js:13:24)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1119:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:960:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1143:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:119:18)\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/server.js:22:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)',
+  stack: 'ReferenceError: checkHeaders is not defined\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/src/routes/routes.js:13:24)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1119:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:960:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1143:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:119:18)\n' +
+    '    at Object.<anonymous> (/Users/tanardi94/Projects/gms/booking-room/api/server.js:22:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1256:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)',
+  exception: true,
+  date: 'Sat Feb 10 2024 22:34:23 GMT+0700 (GMT+07:00)',
+  process: {
+    pid: 29806,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/tanardi94/Projects/gms/booking-room/api',
+    execPath: '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+    version: 'v18.18.1',
+    argv: [
+      '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+      '/Users/tanardi94/Projects/gms/booking-room/api/server.js'
+    ],
+    memoryUsage: {
+      rss: 80642048,
+      heapTotal: 34455552,
+      heapUsed: 24261088,
+      external: 1329148,
+      arrayBuffers: 518063
+    }
+  },
+  os: {
+    loadavg: [ 2.76611328125, 2.76708984375, 2.833984375 ],
+    uptime: 1169124
+  },
+  trace: [
+    {
+      column: 24,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/routes/routes.js',
+      function: null,
+      line: 13,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1256,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1310,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1119,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 960,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1143,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/helpers',
+      function: 'require',
+      line: 119,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/server.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1256,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1310,
+      method: '.js',
+      native: false
+    }
+  ],
+  timestamp: '2024-02-10T15:34:23.101Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'json')
+      at exports.ok (/Users/tanardi94/Projects/gms/booking-room/api/src/helpers/response.js:12:16)
+      at doProfile (/Users/tanardi94/Projects/gms/booking-room/api/src/controllers/auth.controller.js:18:21)
+      at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)
+      at next (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:144:13)
+      at checkHeaders (/Users/tanardi94/Projects/gms/booking-room/api/src/middlewares/headerVerifier.js:19:5)
+      at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)
+      at next (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)
+      at /Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/index.js:284:15,
+  level: 'error',
+  message: "uncaughtException: Cannot read properties of undefined (reading 'json')\n" +
+    "TypeError: Cannot read properties of undefined (reading 'json')\n" +
+    '    at exports.ok (/Users/tanardi94/Projects/gms/booking-room/api/src/helpers/response.js:12:16)\n' +
+    '    at doProfile (/Users/tanardi94/Projects/gms/booking-room/api/src/controllers/auth.controller.js:18:21)\n' +
+    '    at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:144:13)\n' +
+    '    at checkHeaders (/Users/tanardi94/Projects/gms/booking-room/api/src/middlewares/headerVerifier.js:19:5)\n' +
+    '    at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:144:13)\n' +
+    '    at Route.dispatch (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:114:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/index.js:284:15',
+  stack: "TypeError: Cannot read properties of undefined (reading 'json')\n" +
+    '    at exports.ok (/Users/tanardi94/Projects/gms/booking-room/api/src/helpers/response.js:12:16)\n' +
+    '    at doProfile (/Users/tanardi94/Projects/gms/booking-room/api/src/controllers/auth.controller.js:18:21)\n' +
+    '    at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:144:13)\n' +
+    '    at checkHeaders (/Users/tanardi94/Projects/gms/booking-room/api/src/middlewares/headerVerifier.js:19:5)\n' +
+    '    at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:144:13)\n' +
+    '    at Route.dispatch (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js:114:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/index.js:284:15',
+  exception: true,
+  date: 'Sat Feb 10 2024 22:47:11 GMT+0700 (GMT+07:00)',
+  process: {
+    pid: 33337,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/tanardi94/Projects/gms/booking-room/api',
+    execPath: '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+    version: 'v18.18.1',
+    argv: [
+      '/Users/tanardi94/.nvm/versions/node/v18.18.1/bin/node',
+      '/Users/tanardi94/Projects/gms/booking-room/api/server.js'
+    ],
+    memoryUsage: {
+      rss: 84623360,
+      heapTotal: 37601280,
+      heapUsed: 22094688,
+      external: 964762,
+      arrayBuffers: 112871
+    }
+  },
+  os: {
+    loadavg: [ 2.31201171875, 2.45458984375, 2.66796875 ],
+    uptime: 1169892
+  },
+  trace: [
+    {
+      column: 16,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/helpers/response.js',
+      function: 'exports.ok',
+      line: 12,
+      method: 'ok',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/controllers/auth.controller.js',
+      function: 'doProfile',
+      line: 18,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 13,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js',
+      function: 'next',
+      line: 144,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/src/middlewares/headerVerifier.js',
+      function: 'checkHeaders',
+      line: 19,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 13,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js',
+      function: 'next',
+      line: 144,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/route.js',
+      function: 'Route.dispatch',
+      line: 114,
+      method: 'dispatch',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 15,
+      file: '/Users/tanardi94/Projects/gms/booking-room/api/node_modules/express/lib/router/index.js',
+      function: null,
+      line: 284,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-02-10T15:47:11.499Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/profile',
+      headers: {
+        'x-api-key': '15bcec08-1c4f-4c37-8f02-85abbd16e0a8',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1Nzk5MDEsImV4cCI6MTcwNzU4MTEwMX0.y5ful6_0LBB1pBTMg6PUw33mlvXQVTT9FT4mJI9RBUw',
+        'user-agent': 'PostmanRuntime/7.35.0',
+        accept: '*/*',
+        'cache-control': 'no-cache',
+        'postman-token': '5f51662b-3198-4337-960c-0f1423646b00',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        cookie: 'refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1Nzk5MDEsImV4cCI6MTcxOTY3NTkwMX0.1oeUkNrfR704TjHtaQ2lv7a1elm7Wrw-Ti9S7Fgi8yw'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/profile',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 3
+  },
+  level: 'error',
+  message: 'HTTP GET /api/profile',
+  timestamp: '2024-02-10T15:53:30.708Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/profile',
+      headers: {
+        'x-api-key': '15bcec08-1c4f-4c37-8f02-85abbd16e0a8',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcwNzU4MTY5NX0.hkDcXKMM4v5tyx0R10PZ6uHL4S2cEjbc0iOhxhqXQNI',
+        'user-agent': 'PostmanRuntime/7.35.0',
+        accept: '*/*',
+        'cache-control': 'no-cache',
+        'postman-token': 'f8f66b6c-d627-45fb-9efc-27c854f7cec0',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        cookie: 'refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcxOTY3NjQ5NX0.FHWChLnLhhvKkd08tXTUnG83vNOg6tOdJ2dHfT_Lp_0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/profile',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 0
+  },
+  level: 'error',
+  message: 'HTTP GET /api/profile',
+  timestamp: '2024-02-10T15:55:05.251Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/profile',
+      headers: {
+        'x-api-key': '15bcec08-1c4f-4c37-8f02-85abbd16e0a8',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcwNzU4MTY5NX0.hkDcXKMM4v5tyx0R10PZ6uHL4S2cEjbc0iOhxhqXQNI',
+        'user-agent': 'PostmanRuntime/7.35.0',
+        accept: '*/*',
+        'cache-control': 'no-cache',
+        'postman-token': '891834d8-4299-402e-bbd2-a2b5eee35264',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        cookie: 'refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcxOTY3NjQ5NX0.FHWChLnLhhvKkd08tXTUnG83vNOg6tOdJ2dHfT_Lp_0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/profile',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 4
+  },
+  level: 'error',
+  message: 'HTTP GET /api/profile',
+  timestamp: '2024-02-10T15:57:17.339Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/profile',
+      headers: {
+        'x-api-key': '15bcec08-1c4f-4c37-8f02-85abbd16e0a8',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcwNzU4MTY5NX0.hkDcXKMM4v5tyx0R10PZ6uHL4S2cEjbc0iOhxhqXQNI',
+        'user-agent': 'PostmanRuntime/7.35.0',
+        accept: '*/*',
+        'cache-control': 'no-cache',
+        'postman-token': 'a5321225-3854-489b-8d0b-1b36159229db',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        cookie: 'refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcxOTY3NjQ5NX0.FHWChLnLhhvKkd08tXTUnG83vNOg6tOdJ2dHfT_Lp_0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/profile',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 4
+  },
+  level: 'error',
+  message: 'HTTP GET /api/profile',
+  timestamp: '2024-02-10T16:00:28.282Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/profile',
+      headers: {
+        'x-api-key': '15bcec08-1c4f-4c37-8f02-85abbd16e0a8',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcwNzU4MTY5NX0.hkDcXKMM4v5tyx0R10PZ6uHL4S2cEjbc0iOhxhqXQNI',
+        'user-agent': 'PostmanRuntime/7.35.0',
+        accept: '*/*',
+        'cache-control': 'no-cache',
+        'postman-token': 'dc5093bc-727a-417d-a511-2cd46bc2e4e1',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        cookie: 'refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcxOTY3NjQ5NX0.FHWChLnLhhvKkd08tXTUnG83vNOg6tOdJ2dHfT_Lp_0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/profile',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 2
+  },
+  level: 'error',
+  message: 'HTTP GET /api/profile',
+  timestamp: '2024-02-10T16:02:01.639Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/profile',
+      headers: {
+        'x-api-key': '15bcec08-1c4f-4c37-8f02-85abbd16e0a8',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcwNzU4MTY5NX0.hkDcXKMM4v5tyx0R10PZ6uHL4S2cEjbc0iOhxhqXQNI',
+        'user-agent': 'PostmanRuntime/7.35.0',
+        accept: '*/*',
+        'cache-control': 'no-cache',
+        'postman-token': '5c41b099-92d5-4471-ba8e-223e9aac1b20',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        cookie: 'refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6Ijc5NTJmOWQyLTNhOTQtNDY1NC1hYjdmLTA1YjgyNmE2YjkwOCIsInVzZXJFbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDc1ODA0OTUsImV4cCI6MTcxOTY3NjQ5NX0.FHWChLnLhhvKkd08tXTUnG83vNOg6tOdJ2dHfT_Lp_0'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/profile',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 3
+  },
+  level: 'error',
+  message: 'HTTP GET /api/profile',
+  timestamp: '2024-02-10T16:02:10.853Z'
+}

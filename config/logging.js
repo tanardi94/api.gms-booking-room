@@ -11,15 +11,13 @@ function formatDate(date) {
     if (day.length < 2) 
         day = '0' + day;
 
-    return [year, month, day].join('')
+    return [year, month, day].join('-')
 }
 
 const loggerTransports = [
     new winston.transports.File({
         level: 'info',
         filename: `${process.env.LOG_DIRECTORY}/${formatDate(Date.now())}/info.log`,
-        handleExceptions: true,
-        colorize: false
     })
 ]
 
@@ -31,12 +29,14 @@ const requestLoggerTransports = [
 
     new winston.transports.File({
         level: 'error',
-        filename: `${process.env.LOG_DIRECTORY}/${formatDate(Date.now())}/error.log`
+        filename: `${process.env.LOG_DIRECTORY}/${formatDate(Date.now())}/error.log`,
+        handleExceptions: true,
+        colorize: false
     })
 ]
 
 if (process.env.NODE_ENV !== 'production') {
-    loggerTransports.push(
+    requestLoggerTransports.push(
         new winston.transports.Console()
     )
 }

@@ -14,25 +14,25 @@ try {
     db.authenticate()
     console.log('Database connected...')
 } catch (error) {
-    console.log(error)
+    console.error(error)
 }
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-const apiRoutes = require('./app/routes/routes')
+const apiRoutes = require('./src/routes/routes')
 
 app.use(cors())
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-// app.use(expressWinston.logger({
-//     winstonInstance: requestLogger,
-//     statusLevels: true
-// }))
+app.use(expressWinston.logger({
+    winstonInstance: requestLogger,
+    statusLevels: true
+}))
 
-// app.use(expressWinston.logger({
-//     winstonInstance: logger,
-//     statusLevels: true
-// }))
+app.use(expressWinston.logger({
+    winstonInstance: logger,
+    statusLevels: true
+}))
 app.use('/api', apiRoutes)
 app.listen(port, () => console.log(`${process.env.APP_NAME} is running on port ${port}!`))

@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "local_admin",
+    "password": "admin",
+    "database": "coba-booking",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

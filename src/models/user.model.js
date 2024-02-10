@@ -3,19 +3,19 @@ const db = require('../../config/database')
 
 const { DataTypes } = Sequelize
 
-const Users = db.define('users', {
+const User = db.define('users', {
     name: {
         type: DataTypes.STRING
+    },
+    uuid: {
+        type: DataTypes.UUIDV4,
+        defaultValue: Sequelize.UUIDV4
     },
     email: {
         type: DataTypes.STRING
     },
     password: {
         type: DataTypes.STRING
-    },
-    emailVerified: {
-        type: DataTypes.TIME,
-        field: 'email_verified_at'
     },
     refreshToken: {
         type: DataTypes.STRING,
@@ -30,8 +30,6 @@ const Users = db.define('users', {
         field: 'updated_at'
     },
 
-}, {
-    schema: 'internals'
 });
 
-module.exports = Users
+module.exports = User

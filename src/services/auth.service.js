@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const Client = require('../models/client.model')
+const User = require('../models/user.model')
 const uuid = require('uuid')
 const jwt = require('jsonwebtoken')
 
@@ -10,43 +10,42 @@ var result = {
     message: null
 }
 
-const doLogin = async (params) => {
+const loginService = async (params) => {
 
-    let client = await Client.findOne({
-        attributes: ['uuid', 'name', 'username', 'email', 'password'],
+    let user = await User.findOne({
+        attributes: ['uuid', 'name', 'email', 'password'],
         where: {
             email: params.email
         }
     })
     
-    let match = await bcrypt.compare(params.password, client.password)
+    let match = await bcrypt.compare(params.password, user.password)
     if (!match) {
         throw new Error("Wrong")
     }
     
-    let clientUUID = client.uuid
-    let clientID = client.id
-    let clientEmail = client.email
-    let clientUserName = client.username
+    let userUUID = user.uuid
+    let userID = user.id
+    let userEmail = user.email
 
     
 
-    let accessToken = jwt.sign({clientUUID, clientUserName, clientEmail, clientID}, process.env.ACCESS_TOKEN_SECRET, {
+    let accessToken = jwt.sign({userUUID, userEmail, userID}, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: '20m'
     })
 
-    let refresher = jwt.sign({clientUUID, clientUserName, clientEmail, clientID}, process.env.REFRESH_TOKEN_SECRET, {
+    let refresher = jwt.sign({userUUID, userEmail, userID}, process.env.REFRESH_TOKEN_SECRET, {
         expiresIn: '20w'
     })
 
         
     
-    await Client.update({
+    await User.update({
         refreshToken: refresher
     },
     {
         where: {
-            uuid: clientUUID
+            uuid: userUUID
         }
     })
 
@@ -58,7 +57,7 @@ const doLogin = async (params) => {
     return result
 }
 
-const doRegister = async (params) => {
+const registerService = async (params) => {
 
     let { name, email, password, confPassword, username } = params
 
@@ -70,57 +69,56 @@ const doRegister = async (params) => {
     let salt = await bcrypt.genSalt()
     let hashedPassword = await bcrypt.hash(password, salt)
 
-    Client.create({
+    await User.create({
         name: name,
-        uuid: uuid.v4(),
         username: username,
         email: email,
         password: hashedPassword
     })
 
-    result.message = "Client Created"
+    result.message = "user Created"
     return result
 }
 
-const getProfile = async (params) => {
+const getProfileService = async (params) => {
 
-    let client = await Client.findOne({
-        attributes: ['uuid', 'name', 'username', 'email'],
+    let user = await User.findOne({
+        attributes: ['uuid', 'name', 'email'],
         where: {
             uuid: params.uuid
         }
     })
 
-    if (!client) {
+    if (!user) {
         result.code = 404
         return result
     }
 
     result.code = 200
-    result.data = client
+    result.data = user
 
     return result
 }
 
-const doLogout = async (params) => {
+const logoutService = async (params) => {
 
     let refreshToken = params
-    if (!refreshToken) return response.notFound('Client', res)
-    let client = await Client.findOne({
+    if (!refreshToken) return response.notFound('user', res)
+    let user = await User.findOne({
         where: {
             refreshToken: refreshToken
         }
     })
-    if (!client) {
-    result.code = 404
-    result.message = "Client"
-    return result 
+    if (!user) {
+        result.code = 404
+        result.message = "user"
+        return result 
     }
 
-    let clientID = client.uuid
-    await Client.update({refresh_token: null}, {
+    let userID = user.uuid
+    await User.update({refresh_token: null}, {
         where: {
-            uuid: clientID
+            uuid: userID
         }
     })
     
@@ -130,5 +128,5 @@ const doLogout = async (params) => {
 }
 
 module.exports = {
-    getProfile, doLogin, doRegister, doLogout
+    getProfileService, logoutService, loginService, registerService
 }
