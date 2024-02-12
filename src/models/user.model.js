@@ -4,22 +4,17 @@ const db = require('../../config/database')
 const { DataTypes } = Sequelize
 
 const User = db.define('users', {
+    gmsUserID: {
+        field: 'gms_user_id',
+        type: Sequelize.UUID
+    },
     name: {
-        type: DataTypes.STRING
+        field: 'full_name',
+        type: Sequelize.STRING
     },
-    uuid: {
-        type: DataTypes.UUIDV4,
-        defaultValue: Sequelize.UUIDV4
-    },
-    email: {
-        type: DataTypes.STRING
-    },
-    password: {
-        type: DataTypes.STRING
-    },
-    refreshToken: {
-        type: DataTypes.STRING,
-        field: 'refresh_token'
+    roleType: {
+        field: 'role_type',
+        type: Sequelize.INTEGER
     },
     createdAt: {
         type: DataTypes.TIME,

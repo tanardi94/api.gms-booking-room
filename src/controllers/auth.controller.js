@@ -16,9 +16,7 @@ const LoginHandling = (error, res) => {
 
 const doProfile = async (req, res) => {
 
-    let params = {
-        uuid:req.uuid
-    }
+    let params = req.user
     try {
         let authorized = await userService.getProfileService(params)
 

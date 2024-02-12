@@ -10,12 +10,13 @@ var result = {
     message: null
 }
 
+
 const loginService = async (params) => {
 
     let user = await User.findOne({
-        attributes: ['uuid', 'name', 'email', 'password'],
+        attributes: ['name', 'gms_user_id'],
         where: {
-            email: params.email
+            gmsUserID: params.email
         }
     })
     
@@ -24,17 +25,18 @@ const loginService = async (params) => {
         throw new Error("Wrong")
     }
     
-    let userUUID = user.uuid
-    let userID = user.id
-    let userEmail = user.email
+    let uuid = user.uuid
+    let name = user.name
+    let id = user.id
+    let email = user.email
 
     
 
-    let accessToken = jwt.sign({userUUID, userEmail, userID}, process.env.ACCESS_TOKEN_SECRET, {
+    let accessToken = jwt.sign({id, name, email, uuid}, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: '20m'
     })
 
-    let refresher = jwt.sign({userUUID, userEmail, userID}, process.env.REFRESH_TOKEN_SECRET, {
+    let refresher = jwt.sign({id, name, email, uuid}, process.env.REFRESH_TOKEN_SECRET, {
         expiresIn: '20w'
     })
 
@@ -45,7 +47,7 @@ const loginService = async (params) => {
     },
     {
         where: {
-            uuid: userUUID
+            uuid: uuid
         }
     })
 
@@ -82,20 +84,19 @@ const registerService = async (params) => {
 
 const getProfileService = async (params) => {
 
-    let user = await User.findOne({
-        attributes: ['uuid', 'name', 'email'],
-        where: {
-            uuid: params.uuid
-        }
-    })
+    
 
-    if (!user) {
+    if (!params) {
         result.code = 404
         return result
     }
 
     result.code = 200
-    result.data = user
+    result.data = {
+        uuid: params.uuid,
+        name: params.name,
+        email: params.email
+    }
 
     return result
 }

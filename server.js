@@ -26,9 +26,9 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// app.use(expressWinston.logger({
-//     winstonInstance: requestLogger,
-//     statusLevels: true
-// }))
+app.use(expressWinston.logger({
+    winstonInstance: requestLogger,
+    statusLevels: true
+}))
 app.use('/api', apiRoutes)
 app.listen(port, () => console.log(`${process.env.APP_NAME} is running on port ${port}!`))

@@ -9,26 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      uuid: {
-        allowNull: false,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+      gmsUserID: {
+        allowNull: true,
+        field: 'gms_user_id',
+        type: Sequelize.UUID
       },
       name: {
         allowNull: false,
+        field: 'full_name',
         type: Sequelize.STRING
       },
-      email: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      password: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      refreshToken: {
-        field: 'refresh_token',
-        type: Sequelize.STRING
+      roleType: {
+        allowNull: true,
+        field: 'role_type',
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

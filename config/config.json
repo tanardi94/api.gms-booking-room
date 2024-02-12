@@ -2,7 +2,7 @@
   "development": {
     "username": "local_admin",
     "password": "admin",
-    "database": "coba-booking",
+    "database": "gms-booking-room",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
