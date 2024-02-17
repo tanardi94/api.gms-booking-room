@@ -1,20 +1,21 @@
-const { default: axios } = require("axios")
+import axios from "axios"
+import dotenv from 'dotenv'
+dotenv.config()
 
 const MYGMS_API_URL = process.env.MYGMS_API_URL
-const MYGMS_CLIENT_ID = process.env.MYGMS_CLIENT_ID
-const MYGMS_CLIENT_SECRET = process.env.MYGMS_CLIENT_SECRET
 
-exports.GMSGetPeopleByAuthCode = async (req, res) => {
+export async function GMSGetPeopleByAuthCode(authCode) {
+
     try {
-        let gmsAPI = axios.post(MYGMS_API_URL + '/oauth/token', {
-            client_id: MYGMS_CLIENT_ID,
-            client_secret: MYGMS_CLIENT_SECRET,
-            auth_code: req.body.authCode
+        let gmsAPI = axios.post(`${MYGMS_API_URL}/v1/people`, {
+            headers: {
+                Accept: 'application/json',
+                Authorization: 'Bearer ' + authCode 
+            }
         })
-
-        res.json(gmsAPI)
+        return gmsAPI.data
     } catch (error) {
         console.log(error)
-        return
+        return false
     }
 }

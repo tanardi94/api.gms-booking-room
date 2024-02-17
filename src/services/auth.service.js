@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt')
-const User = require('../models/user.model')
-const uuid = require('uuid')
-const jwt = require('jsonwebtoken')
+import bcrypt from 'bcrypt'
+import User from '../models/user.model.js'
+import jwt from 'jsonwebtoken'
+import { GMSGetPeopleByAuthCode } from '../helpers/gms-api.js'
 
 
 var result = {
@@ -10,13 +10,21 @@ var result = {
     message: null
 }
 
+export const APIService = async (params) => {
+    let user = await GMSGetPeopleByAuthCode(params.authCode)
+    if (!user) {
+        return null;
+    }
 
-const loginService = async (params) => {
+    return user
+}
+
+
+export const loginService = async (params) => {
 
     let user = await User.findOne({
-        attributes: ['name', 'gms_user_id'],
         where: {
-            gmsUserID: params.email
+            email: params.email
         }
     })
     
@@ -25,7 +33,7 @@ const loginService = async (params) => {
         throw new Error("Wrong")
     }
     
-    let uuid = user.uuid
+    let uuid = user.gmsUserID
     let name = user.name
     let id = user.id
     let email = user.email
@@ -59,7 +67,7 @@ const loginService = async (params) => {
     return result
 }
 
-const registerService = async (params) => {
+export const registerService = async (params) => {
 
     let { name, email, password, confPassword, username } = params
 
@@ -82,7 +90,7 @@ const registerService = async (params) => {
     return result
 }
 
-const getProfileService = async (params) => {
+export const getProfileService = async (params) => {
 
     
 
@@ -101,7 +109,7 @@ const getProfileService = async (params) => {
     return result
 }
 
-const logoutService = async (params) => {
+export const logoutService = async (params) => {
 
     let refreshToken = params
     if (!refreshToken) return response.notFound('user', res)
@@ -126,8 +134,4 @@ const logoutService = async (params) => {
     result.message = "Successfully logged out"
     return result
     
-}
-
-module.exports = {
-    getProfileService, logoutService, loginService, registerService
 }

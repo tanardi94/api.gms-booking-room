@@ -1,4 +1,6 @@
-const winston = require('winston')
+import winston from 'winston';
+import dotenv from "dotenv"
+dotenv.config()
 
 function formatDate(date) {
     var d = new Date(date),
@@ -52,6 +54,4 @@ const requestLogger = winston.createLogger({
     )
 })
 
-module.exports = {
-    requestLogger
-}
+export default requestLogger

@@ -1,20 +1,19 @@
-const express = require('express')
-const response = require('../helpers/response')
-const authController = require('../controllers/auth.controller')
-// const tokens = require('../controllers/refreshToken.controller')
-const { checkHeaders } = require('../middlewares/headerVerifier')
-const { verifyToken } = require('../middlewares/tokenVerifier')
+import { Router } from 'express'
+import * as response from '../helpers/response.js'
+import { doProfile, doRegister, doLogin, doAPI, doLogout } from '../controllers/auth.controller.js'
+import { checkHeaders } from '../middlewares/headerVerifier.js'
+import { verifyToken } from '../middlewares/tokenVerifier.js'
 
-const router = express.Router()
+const router = Router()
 
 router.get("/coba", (req, res) => {
     return response.ok("Hello WOrld", res);
 })
 
-router.get('/profile', [checkHeaders, verifyToken], authController.doProfile)
-router.post('/register', authController.doRegister)
-router.post('/login', authController.doLogin)
-// router.post('/token', tokens.refreshToken)
-// router.delete('/logout', auth.Logout)
+router.get('/profile', [checkHeaders, verifyToken], doProfile)
+router.post('/register', doRegister)
+router.post('/login', doLogin)
+router.post('/coba', doAPI)
+router.delete('/logout', doLogout)
 
-module.exports = router
+export default router

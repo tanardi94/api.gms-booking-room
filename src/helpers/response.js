@@ -1,7 +1,7 @@
 'use strict'
 
 
-exports.ok = function(values, res) {
+export function ok(values, res) {
     var data = {
         success: true,
         code: 200,
@@ -10,9 +10,9 @@ exports.ok = function(values, res) {
         values: values
     };
     return res.json(data).end();
-};
+}
 
-exports.customResponse = (message, status, code, errors, values, res) => {
+export function customResponse(message, status, code, errors, values, res) {
     var data = {
         success: status,
         code: code,
@@ -23,7 +23,7 @@ exports.customResponse = (message, status, code, errors, values, res) => {
     return res.json(data).end();
 }
 
-exports.failure = function(message, res) {
+export function failure(message, res) {
     var data = {
         success: false,
         code: 400,
@@ -32,9 +32,9 @@ exports.failure = function(message, res) {
         values: []
     };
     return res.json(data).end();
-};
+}
 
-exports.notFound = function(message, res) {
+export function notFound(message, res) {
     var data = {
         success: false,
         code: 404,
@@ -43,9 +43,9 @@ exports.notFound = function(message, res) {
         values: []
     };
     return res.json(data).end();
-};
+}
 
-exports.created = function(message, data = [], res) {
+export function created(message, data = [], res) {
     var data = {
         success: true,
         code: 201,
@@ -56,7 +56,7 @@ exports.created = function(message, data = [], res) {
     return res.json(data).end();
 }
 
-exports.invalidParameter = function(errors, res) {
+export function invalidParameter(errors, res) {
     var data = {
         success: false,
         code: 422,
@@ -67,7 +67,7 @@ exports.invalidParameter = function(errors, res) {
     return res.json(data).end();
 }
 
-exports.forbidden = function(res) {
+export function forbidden(res) {
     var data = {
         success: false,
         code: 403,
@@ -79,7 +79,7 @@ exports.forbidden = function(res) {
     return res.json(data).end();
 }
 
-exports.unauthenticated = function(res) {
+export function unauthenticated(res) {
     var data = {
         success: false,
         code: 401,

@@ -1,7 +1,3 @@
-const ErrorMessage = "Something Went Wrong"
-const ErrorLoginMessage = "Incorrect email or password"
+export const ErrorMessage = "Something Went Wrong"
+export const ErrorLoginMessage = "Incorrect email or password"
 
-
-module.exports = {
-    ErrorMessage, ErrorLoginMessage
-}

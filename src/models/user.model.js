@@ -1,30 +1,44 @@
-const Sequelize = require('sequelize')
-const db = require('../../config/database')
+import Sequelize, { UUID, UUIDV4 } from 'sequelize';
+import db from '../../config/database.js';
 
-const { DataTypes } = Sequelize
-
-const User = db.define('users', {
+const User = db.define('User', {
     gmsUserID: {
         field: 'gms_user_id',
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
+        allowNull: true,
+        defaultValue: UUIDV4
     },
     name: {
         field: 'full_name',
+        allowNull: false,
+        type: Sequelize.STRING
+    },
+    email: {
+        allowNull: false,
+        type: Sequelize.STRING
+    },
+    password: {
+        allowNull: false,
         type: Sequelize.STRING
     },
     roleType: {
         field: 'role_type',
+        defaultValue: 1,
         type: Sequelize.INTEGER
     },
     createdAt: {
-        type: DataTypes.TIME,
+        type: Sequelize.DataTypes.DATE,
         field: 'created_at'
     },
     updatedAt: {
-        type: DataTypes.TIME,
+        type: Sequelize.DataTypes.DATE,
         field: 'updated_at'
     },
 
+}, {
+    tableName: 'users',
 });
 
-module.exports = User
+db.sync()
+
+export default User

@@ -1,6 +1,8 @@
-const Sequelize = require("sequelize")
+import { Sequelize } from "sequelize"
+import dotenv from 'dotenv'
+dotenv.config()
 
-const sequelize = new Sequelize(
+const db = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USERNAME,
     process.env.DB_PASSWORD,
@@ -12,4 +14,4 @@ const sequelize = new Sequelize(
     }
 )
 
-module.exports = sequelize
+export default db
