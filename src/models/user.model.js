@@ -13,12 +13,9 @@ const User = db.define('User', {
         allowNull: false,
         type: Sequelize.STRING
     },
-    email: {
-        allowNull: false,
-        type: Sequelize.STRING
-    },
-    password: {
-        allowNull: false,
+    nij: {
+        field: 'NIJ',
+        allowNull: true,
         type: Sequelize.STRING
     },
     roleType: {

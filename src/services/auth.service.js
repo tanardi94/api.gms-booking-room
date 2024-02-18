@@ -10,89 +10,48 @@ var result = {
     message: null
 }
 
-export const APIService = async (params) => {
-    let user = await GMSGetPeopleByAuthCode(params.authCode)
-    if (!user) {
-        return null;
-    }
-
-    return user
-}
-
-
 export const loginService = async (params) => {
+
+    let GMSAccount = await GMSGetPeopleByAuthCode(params.auth_code)
+    if (!GMSAccount) {
+        return null
+    }
 
     let user = await User.findOne({
         where: {
-            email: params.email
+            gmsUserID: GMSAccount.mygms_id
         }
     })
-    
-    let match = await bcrypt.compare(params.password, user.password)
-    if (!match) {
-        throw new Error("Wrong")
+
+    if (!user) {
+        user = await User.create({
+            name: GMSAccount.name,
+            gmsUserID: GMSAccount.mygms_id,
+            roleType: GMSAccount.type,
+            nij: GMSAccount.nij
+        })
     }
     
-    let uuid = user.gmsUserID
+    let gmsID = user.gmsUserID
     let name = user.name
     let id = user.id
-    let email = user.email
+    let nij = user.nij
 
     
 
-    let accessToken = jwt.sign({id, name, email, uuid}, process.env.ACCESS_TOKEN_SECRET, {
-        expiresIn: '20m'
-    })
-
-    let refresher = jwt.sign({id, name, email, uuid}, process.env.REFRESH_TOKEN_SECRET, {
+    let accessToken = jwt.sign({id, name, nij, gmsID}, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: '20w'
     })
 
-        
-    
-    await User.update({
-        refreshToken: refresher
-    },
-    {
-        where: {
-            uuid: uuid
-        }
-    })
-
     result.data = {
-        refresher: refresher,
-        accessToken: accessToken
+        accessToken: accessToken,
+        nij: user.nij
     }
 
-    return result
-}
-
-export const registerService = async (params) => {
-
-    let { name, email, password, confPassword, username } = params
-
-    if (password !== confPassword) {
-        result.code = 400
-        result.message = "Password does not match"
-        return result
-    }
-    let salt = await bcrypt.genSalt()
-    let hashedPassword = await bcrypt.hash(password, salt)
-
-    await User.create({
-        name: name,
-        username: username,
-        email: email,
-        password: hashedPassword
-    })
-
-    result.message = "User is successfully registered"
     return result
 }
 
 export const getProfileService = async (params) => {
-
-    
 
     if (!params) {
         result.code = 404
@@ -101,37 +60,10 @@ export const getProfileService = async (params) => {
 
     result.code = 200
     result.data = {
-        uuid: params.uuid,
+        uuid: params.gmsUserID,
         name: params.name,
-        email: params.email
+        nij: params.nij
     }
 
     return result
-}
-
-export const logoutService = async (params) => {
-
-    let refreshToken = params
-    if (!refreshToken) return response.notFound('user', res)
-    let user = await User.findOne({
-        where: {
-            refreshToken: refreshToken
-        }
-    })
-    if (!user) {
-        result.code = 404
-        result.message = "user"
-        return result 
-    }
-
-    let userID = user.uuid
-    await User.update({refresh_token: null}, {
-        where: {
-            uuid: userID
-        }
-    })
-    
-    result.message = "Successfully logged out"
-    return result
-    
 }
